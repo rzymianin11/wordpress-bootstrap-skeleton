@@ -1,6 +1,7 @@
 @use 'include-media/dist/_include-media.scss' as *;
 @use 'variables' as *;
 @use 'mixins' as *;
+@use "sass:math";
 
 /* ---------------------------------------------------------------------------- */
 /* --- GRID
@@ -64,8 +65,22 @@
 }
 
 .col {
-  @include flexboxgrid-sass-col-common;
-  flex-basis: auto;
+  position: relative;
+  width: 100%;
+  @include media('>md') {
+    padding-right: $half-gutter-width-desktop;
+    padding-left: $half-gutter-width-desktop;
+  }
+  @include media('<=md') {
+    padding-right: $half-gutter-width-mobile;
+    padding-left: $half-gutter-width-mobile;
+  }
+  flex: 0 0 100%;
+  max-width: 100%;
+
+  @include media('>=md') {
+    flex-basis: auto;
+  }
 }
 
 .row.no-gutters {
@@ -82,21 +97,15 @@
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
     @include flexboxgrid-sass-col-common;
-    flex-basis: 100% / $grid-columns * $i;
-    max-width: 100% / $grid-columns * $i;
+    flex-basis: math.div(100%, $grid-columns) * $i;
+    max-width: math.div(100%, $grid-columns) * $i;
   }
 }
 @for $i from 1 through $grid-columns {
   .col-offset-#{$i} {
     @include flexboxgrid-sass-col-common;
-    margin-left: 100% / $grid-columns * $i;
+    margin-left: math.div(100%, $grid-columns) * $i;
   }
-}
-
-.col {
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
 }
 
 .justify-content-start {
@@ -157,11 +166,13 @@
       @include flexboxgrid-sass-col-common;
       flex-basis: auto;
     }
+
     .col-#{$name} {
       flex-basis: 0;
       flex-grow: 1;
       max-width: 100%;
     }
+
     .justfy-content-start-#{$name} {
       justify-content: flex-start;
       // text-align: start;
@@ -207,14 +218,14 @@
     @for $i from 1 through $grid-columns {
       .col-#{$name}-#{$i} {
         @include flexboxgrid-sass-col-common;
-        flex-basis: 100% / $grid-columns * $i;
-        max-width: 100% / $grid-columns * $i;
+        flex-basis: math.div(100%, $grid-columns) * $i;
+        max-width: math.div(100%, $grid-columns) * $i;
       }
     }
     @for $i from 1 through $grid-columns {
       .col-#{$name}-offset-#{$i} {
         @include flexboxgrid-sass-col-common;
-        margin-left: 100% / $grid-columns * $i;
+        margin-left: math.div(100%, $grid-columns) * $i;
       }
     }
   }

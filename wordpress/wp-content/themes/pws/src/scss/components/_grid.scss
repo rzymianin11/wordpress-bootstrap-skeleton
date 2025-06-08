@@ -1,0 +1,17 @@
+@use "sass:math";
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{$grid-gutter};
+
+  &__col {
+    padding: 0 $grid-gutter;
+
+    @for $i from 1 through $grid-columns {
+      &--#{$i} {
+        flex-basis: math.div(100%, $grid-columns) * $i;
+      }
+    }
+  }
+} 

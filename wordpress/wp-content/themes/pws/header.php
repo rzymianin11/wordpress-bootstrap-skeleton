@@ -20,29 +20,15 @@
 
     </head>
     <body <? body_class(); ?>>
-    	<div  id="page">
-	    	<header id="main-header" data-animation="fade-in-down">
-		    	<div class="container">
-			    	<div class="row">
-				    	<div class="col-auto">
-					    	<a href="<?=get_site_url()?>"><img src="<?=get_field('logo', 'option')['url']?>?>" alt="logo"/></a>
-				    	</div>
-				    	<div class="col-auto d-none d-sm-block">
-					        <?php
-						        wp_nav_menu(array(
-						            'theme_location' => 'main_menu',
-						            'menu_id' => '',
-						            'container' => 'ul',
-						        ));
-					        ?>
-				    	</div>
-
-				    	<div class="col-auto ml-auto d-block d-sm-none">
-<a href="#menu"><mm-burger
-    menu="menu"
-    fx="tornado"
-></mm-burger></a>
-				    	</div>
-			    	</div>
-		    	</div>
-	    	</header>
+    	<div class="page-wrapper"> 
+<header id="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-auto">
+				<div class="logo">
+					<a href="/"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logo.png" alt="logo"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

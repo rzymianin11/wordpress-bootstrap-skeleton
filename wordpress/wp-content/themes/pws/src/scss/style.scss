@@ -9,36 +9,36 @@ Author:         Suelo
 -------------------------------------------------------------------------------- */
 
 // Import Libs
-@import 'include-media/dist/_include-media.scss';
-@import 'sass-easing/_easings.scss';
-@import 'normalize-scss/sass/normalize/_import-now.scss';
-@import 'locomotive-scroll/src/locomotive-scroll.scss';
-@import 'slick-carousel/slick/slick.scss';
-//@import 'mmenu-js/src/mmenu.scss';
-@import '../../node_modules/mmenu-js/dist/mmenu.css';
+@forward 'include-media/dist/_include-media.scss';
+@use 'include-media/dist/_include-media.scss' as *;
+@forward 'sass-easing/_easings.scss';
+@forward 'normalize-scss/sass/normalize/_import-now.scss';
+@forward 'slick-carousel/slick/slick.scss';
+//@forward 'mmenu-js/src/mmenu.scss';
+@forward '../../node_modules/mmenu-js/dist/mmenu.css';
 
 
 // Import Config
-@import 'variables';
-@import 'mixins';
+@forward 'variables';
+@forward 'mixins';
 
 // Import Icons
-@import '../../assets/fonts/icons';
-@import '../../assets/fonts/fonts';
+@forward '../../assets/fonts/icons';
+@forward '../../assets/fonts/fonts';
 
 // Import Styles
-@import 'animations';
-@import 'setup';
-@import 'basics';
-@import 'grid';
-@import 'header';
-@import 'sections';
-@import 'footer';
-@import 'elements';
-@import 'helpers';
+@forward 'animations';
+@forward 'setup';
+@forward 'basics';
+@forward 'grid';
+@forward 'header';
+@forward 'sections';
+@forward 'footer';
+@forward 'elements';
+@forward 'helpers';
 
 // Import pages
-@import 'pages';
+//@forward 'pages';
 
 @include media('<=768px'){ 
 	h2 {

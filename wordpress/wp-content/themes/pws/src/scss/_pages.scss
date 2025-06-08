@@ -1,4 +1,4 @@
-@import '_pages/projects';
-@import '_pages/uslugi';
-@import '_pages/forms';
-@import '_pages/kariera';
+@forward '_pages/projects';
+@forward '_pages/uslugi';
+@forward '_pages/forms';
+@forward '_pages/kariera';

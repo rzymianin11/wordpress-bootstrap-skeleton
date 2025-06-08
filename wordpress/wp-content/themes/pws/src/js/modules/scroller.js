@@ -1,5 +1,3 @@
-import LocomotiveScroll from 'locomotive-scroll'
-
 function isinViewport(elem) {
   var bounding = elem.getBoundingClientRect()
   return bounding.top >= 0 && bounding.left >= 0
@@ -11,20 +9,6 @@ const Scroller = {
     const body = document.getElementsByTagName('body')[0]
     const customContainer = document.querySelector('#page')
 
-/*
-    _.scroll = new LocomotiveScroll({
-      el: customContainer,
-      smooth: true,
-      lerp: 0.15,
-      getDirection: true,
-      repeat: true,
-      getSpeed: true,
-      offset: ['10%', '0'],
-      tablet: {
-        breakpoint: 992
-      }
-    })
-*/
 
     _.scroll.on('scroll', args => {
       const items = document.querySelectorAll('[data-scroll-call="animation"], [data-scroll-call="custom-animation"]')

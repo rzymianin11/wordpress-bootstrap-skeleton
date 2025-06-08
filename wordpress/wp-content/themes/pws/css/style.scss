@@ -1,11 +1,11 @@
 @charset 'utf-8';
 
-@import "bourbon/_bourbon.scss";
+@forward "bourbon/_bourbon.scss";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700,900&subset=latin-ext');
+@forward url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700,900&subset=latin-ext');
 
-@import "vendor/_burger.scss";
-@import "vendor/_include-media.scss";
+@forward "vendor/_burger.scss";
+@forward "vendor/_include-media.scss";
 
 $breakpoints: (
   'phone': 500px,

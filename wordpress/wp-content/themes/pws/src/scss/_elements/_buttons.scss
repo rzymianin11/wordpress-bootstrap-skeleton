@@ -1,19 +1,3 @@
-.btn {
-	display: inline-block;
-	&-primary {
-		border-radius: rem(6px);
-		background-color: $color-blue;
-		color: white;
-		padding: rem(10px) rem(20px);
-		font-weight: 600;
-		font-size: rem(14px);
-	}
-	&-gray {
-		background-color: #EEEEEE;
-		border: none;
-		box-shadow: none;
-		outline: none;
-		color: black;
-		font-weight: 400;
-	}
-}
+@use '~include-media/dist/_include-media.scss' as *;
+@use '../variables' as *;
+@use '../mixins' as *;

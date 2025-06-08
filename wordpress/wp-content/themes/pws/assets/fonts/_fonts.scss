@@ -1,3 +1,5 @@
+@use '../../src/scss/variables' as *;
+
 @font-face {
   font-family: 'London Town';
   src: url($font-path+'LondonTownBold.woff2') format('woff2'),

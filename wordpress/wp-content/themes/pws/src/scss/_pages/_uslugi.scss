@@ -1,0 +1,39 @@
+body {
+	&.page-template-uslugi-page {
+		.kt-inside-inner-col {
+			.wp-block-image {
+				
+			}
+			ul {
+				width: 100%;
+				list-style-type: none;
+				margin: 0;
+				li {
+					margin-bottom: 20px;
+					font-size: rem(20px);
+					font-weight: 400;
+					display: flex;
+					&:before {
+						color: $color-blue;
+						margin-right: 0.5em;
+						@include icon(li);
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+				@include media('>991px'){
+					padding-left: 80px;
+					padding-right: 80px;
+				}			
+			}
+		}
+	}
+}
+
+.kt-inside-inner-col {
+
+	ul {
+
+	}
+}

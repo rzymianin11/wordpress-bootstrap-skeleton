@@ -1,0 +1,22 @@
+{#
+  Title: Banner wide
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: list lists
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section section-widebanner">
+	<div class="row align-items-end justify-content-start">
+		<div class="bg" style="background-image: url('{{ fields.image.sizes.maxviewport }}');"></div>
+		<div class="col">
+			<h3>{{ fields.title }}</h3>
+			<a class="btn btn-primary" href="{{ fields.przycisk.url }}">{{ fields.przycisk.title }}</a>
+		</div>
+	</div>
+</section>

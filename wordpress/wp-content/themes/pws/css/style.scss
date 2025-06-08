@@ -1,0 +1,68 @@
+@charset 'utf-8';
+
+@import "bourbon/_bourbon.scss";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700,900&subset=latin-ext');
+
+@import "vendor/_burger.scss";
+@import "vendor/_include-media.scss";
+
+$breakpoints: (
+  'phone': 500px,
+  'tablet': 768px,
+  'desktop': 1024px
+);
+
+
+%round {
+	border-radius: 50%;
+}
+
+/// Helper do oczyszczania floatów
+/// @author Nicolas Gallagher
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+$mqIterations: 19;
+@mixin fontResize($iterations) { 
+    $i: 1; 
+    @while $i <= $iterations { 
+        @media all and (min-width: 669px + (100 * $i)) { & { font-size:(1em + (0.2em * $i)); } } 
+        $i: $i + 1; 
+    }
+} 
+@mixin fontResize2($iterations) { 
+    $i: 1; 
+    @while $i <= $iterations { 
+        @media all and (min-width: 120px + (100 * $i)) { & { font-size:(1em + (0.2em * $i)); } } 
+        $i: $i + 1; 
+    }
+} 
+
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}

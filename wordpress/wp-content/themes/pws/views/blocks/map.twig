@@ -1,0 +1,248 @@
+{#
+  Title: Map
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: map mapa google
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section section-map" id="{{ block.id }}" beztla="{{ fields.bez_tla }}"  data-animation="fade-in-down">
+	<div class="container">
+		<div class="row row-wrapper">
+			<div class="col-12">
+				<div class="acf-map">
+					<div class="marker" data-lat="{{ fields.map.lat }}" data-lng="{{ fields.map.lng }}"></div>
+				</div>
+			</div>
+	    </div>
+	</div>
+</section>
+
+
+<style type="text/css">
+.acf-map {
+    width: 100%;
+    height: 600px;
+    border: #ccc solid 1px;
+    margin: 20px 0;
+}
+
+// Fixes potential theme css conflict.
+.acf-map img {
+   max-width: inherit !important;
+}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWGFAu-Ogyy6b5nhO40DtvX3rt0uclFEM"></script>
+<script type="text/javascript">
+(function( $ ) {
+
+/**
+ * initMap
+ *
+ * Renders a Google Map onto the selected jQuery element
+ *
+ * @date    22/10/19
+ * @since   5.8.6
+ *
+ * @param   jQuery $el The jQuery element.
+ * @return  object The map instance.
+ */
+function initMap( $el ) {
+
+    // Find marker elements within map.
+    var $markers = $el.find('.marker');
+    
+  const styledMapType = new google.maps.StyledMapType(
+[
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "color": "#878787"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f9f5ed"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f5f5f5"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#c9c9c9"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#aee0f4"
+            }
+        ]
+    }
+],
+    { name: "Styled Map" }
+  );
+
+
+    // Create gerenic map.
+    var mapArgs = {
+        zoom        : $el.data('zoom') || 13,
+        disableDefaultUI: true,
+        mapTypeId   : google.maps.MapTypeId.ROADMAP
+    };
+    
+    var map = new google.maps.Map( $el[0], mapArgs );
+    
+	  map.mapTypes.set("styled_map", styledMapType);
+	  map.setMapTypeId("styled_map");
+
+    // Add markers.
+    map.markers = [];
+    $markers.each(function(){
+        initMarker( $(this), map );
+    });
+
+    // Center map based on markers.
+    centerMap( map );
+
+    // Return map instance.
+    return map;
+}
+
+/**
+ * initMarker
+ *
+ * Creates a marker for the given jQuery element and map.
+ *
+ * @date    22/10/19
+ * @since   5.8.6
+ *
+ * @param   jQuery $el The jQuery element.
+ * @param   object The map instance.
+ * @return  object The marker instance.
+ */
+function initMarker( $marker, map ) {
+
+    // Get position from marker.
+    var lat = $marker.data('lat');
+    var lng = $marker.data('lng');
+    var latLng = {
+        lat: parseFloat( lat ),
+        lng: parseFloat( lng )
+    };
+    
+    var sizeX = 40;
+    var sizeY = 40;
+
+  const svgMarker = {
+    url: window.template_url+"/assets/img/logoicon.svg",
+    size: new google.maps.Size(sizeX, sizeY),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(sizeX/2, sizeY/2),
+        scaledSize: new google.maps.Size(40, 40)
+  };
+    
+  const image =
+    "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjMuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMCAxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAgMTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGREZEO30KCS5zdDF7ZmlsbDojMDA5RUUyO30KPC9zdHlsZT4KPGc+Cgk8Zz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNOS42LDVjMCwyLjUtMi4xLDQuNi00LjYsNC42QzIuNSw5LjYsMC40LDcuNiwwLjQsNVMyLjUsMC40LDUsMC40QzcuNSwwLjQsOS42LDIuNSw5LjYsNXoiLz4KCQk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNNSwxMGMtMi44LDAtNS0yLjItNS01czIuMi01LDUtNWMyLjgsMCw1LDIuMiw1LDVTNy44LDEwLDUsMTB6IE01LDAuOEMyLjcsMC44LDAuOCwyLjcsMC44LDVTMi43LDkuMiw1LDkuMgoJCQlTOS4yLDcuMyw5LjIsNVM3LjMsMC44LDUsMC44eiIvPgoJPC9nPgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTcuMiwzLjJsMCwzLjJMNi44LDYuN2wwLTMuOEw3LjIsMy4yeiIvPgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTYuMyw3TDUuOCw3LjNsMC00LjdMMy4zLDRsMCwzLjJMMi44LDYuOVYzLjdsMi43LTEuNWwwLjgsMC40TDYuMyw3eiIvPgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTQuMyw0TDMuNyw0LjN2My4ybDAuNSwwLjNMNC4zLDR6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNNS4zLDMuNEw0LjcsMy43bDAsNGwwLjUtMC4zTDUuMywzLjR6Ii8+CjwvZz4KPC9zdmc+Cg==";
+
+
+    // Create marker instance.
+    var marker = new google.maps.Marker({
+        position : latLng,
+        map: map,
+        icon: svgMarker
+    });
+
+    // Append to reference for later use.
+    map.markers.push( marker );
+
+    // If marker contains HTML, add it to an infoWindow.
+    if( $marker.html() ){
+
+        // Create info window.
+        var infowindow = new google.maps.InfoWindow({
+            content: $marker.html()
+        });
+
+        // Show info window when marker is clicked.
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open( map, marker );
+        });
+    }
+}
+
+/**
+ * centerMap
+ *
+ * Centers the map showing all markers in view.
+ *
+ * @date    22/10/19
+ * @since   5.8.6
+ *
+ * @param   object The map instance.
+ * @return  void
+ */
+function centerMap( map ) {
+
+    // Create map boundaries from all map markers.
+    var bounds = new google.maps.LatLngBounds();
+    map.markers.forEach(function( marker ){
+        bounds.extend({
+            lat: marker.position.lat(),
+            lng: marker.position.lng()
+        });
+    });
+
+    // Case: Single marker.
+    if( map.markers.length == 1 ){
+        map.setCenter( bounds.getCenter() );
+
+    // Case: Multiple markers.
+    } else{
+        map.fitBounds( bounds );
+    }
+}
+
+// Render maps on page load.
+$(document).ready(function(){
+    $('.acf-map').each(function(){
+        var map = initMap( $(this) );
+    });
+});
+
+})(jQuery);
+</script>

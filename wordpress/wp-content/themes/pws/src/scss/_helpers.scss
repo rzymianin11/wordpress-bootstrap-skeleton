@@ -1,0 +1,160 @@
+/* ---------------------------------------------------------------------------- */
+/* --- HELPERS
+/* ----------------------------------------------------------------------------- */
+
+.hidden {
+  visibility: hidden;
+}
+
+/* Typography
+----------------------------------------------------------*/
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @include media('>#{$breakpoint}') {
+    .text-#{$breakpoint}-center {
+      text-align: center;
+    }
+    .text-#{$breakpoint}-left {
+      text-align: center;
+    }
+    .text-#{$breakpoint}-right {
+      text-align: center;
+    }
+  }
+}
+
+/* Spacing
+----------------------------------------------------------*/
+
+$spacing-types: (
+  mt: 'margin-top',
+  mr: 'margin-right',
+  mb: 'margin-bottom',
+  ml: 'margin-left',
+  pt: 'padding-top',
+  pr: 'padding-right',
+  pb: 'padding-bottom',
+  pl: 'padding-left',
+  p: 'padding',
+  m: 'margin'
+);
+
+@each $shortcut, $style in $spacing-types {
+  @for $i from 0 through 5 {
+    .#{$shortcut}-#{$i} {
+      #{$style}: #{0.5 * $i}rem !important;
+    }
+  }
+  .#{$shortcut}-auto {
+    #{$style}: auto !important;
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @include media('>#{$breakpoint}') {
+    @each $shortcut, $style in $spacing-types {
+      @for $i from 0 through 5 {
+        .#{$shortcut}-#{$breakpoint}-#{$i} {
+          #{$style}: #{0.5 * $i}rem !important;
+        }
+      }
+      .#{$shortcut}-#{$breakpoint}-auto {
+        #{$style}: auto !important;
+      }
+    }
+  }
+}
+@each $shortcut, $style in $spacing-types {
+  .#{$shortcut}-layout {
+    @include media('>md') {
+      #{$style}: $layout-spacing-desktop !important;
+    }
+    @include media('<=md') {
+      #{$style}: $layout-spacing-mobile !important;
+    }
+  }
+  .#{$shortcut}-layout-lg {
+    @include media('>md') {
+      #{$style}: $layout-spacing-desktop-lg !important;
+    }
+    @include media('<=md') {
+      #{$style}: $layout-spacing-mobile-lg !important;
+    }
+  }
+  .#{$shortcut}-layout-sm {
+    @include media('>md') {
+      #{$style}: $layout-spacing-desktop-sm !important;
+    }
+    @include media('<=md') {
+      #{$style}: $layout-spacing-mobile-sm !important;
+    }
+  }
+}
+
+/* Display */
+
+.d-block {
+  display: block !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @include media('>#{$breakpoint}') {
+    .d-#{$breakpoint}-block {
+      display: block !important;
+    }
+    .d-#{$breakpoint}-none {
+      display: none !important;
+    }
+    .d-#{$breakpoint}-flex {
+      display: flex !important;
+    }
+  }
+}
+
+/* Flex */
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @include media('>#{$breakpoint}') {
+    .flex-#{$breakpoint}-column {
+      flex-direction: column !important;
+    }
+    .justify-content-#{$breakpoint}-start {
+      justify-content: flex-start !important;
+    }
+    .align-items-#{$breakpoint}-start {
+      align-items: flex-start !important;
+    }
+  }
+}

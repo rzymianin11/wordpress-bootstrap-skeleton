@@ -1,0 +1,43 @@
+.section {
+	&-widebanner {
+		width: 100%;
+		& > .row {
+			height: 200px;
+			position: relative;
+			color: white;
+			.bg {
+				position: absolute;
+				left: 20px;
+				right: 20px;
+				top: 0;
+				bottom: 0;
+				background-size: cover;
+				background-position: center center;
+				z-index: -1;
+			}
+			& > .col {
+				padding-left: 60px;
+				padding-bottom: 50px;
+			}
+		}
+		h3 {
+			margin: 0;
+			color: white;
+			font-size: rem(32px);
+			font-weight: 400;
+			margin-right: 30px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		a {
+			display: inline-block;
+			vertical-align: middle;
+			font-weight: 400;
+		}
+	}
+}
+
+h2 {
+	position: relative;
+	z-index: 2;
+}

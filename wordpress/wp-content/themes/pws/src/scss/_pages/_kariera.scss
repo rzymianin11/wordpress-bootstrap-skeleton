@@ -1,0 +1,38 @@
+body {
+	&.page-template-kariera-page {
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+		.stanowisko {
+			margin-bottom: rem(40px);
+			img {
+				width: 100%;
+				height: auto;
+			}
+			h2, h3, h5 {
+				margin: 0;
+			}
+			h2 {
+				font-size: rem(24px);
+				font-weight: 400;
+				
+			}
+			h3 {
+				margin-bottom: rem(15px);
+			}
+			h3, h5 {
+				font-size: rem(18px);
+				font-weight: 400;
+			}
+				.title {
+				a {
+					display: block;
+					margin-top: rem(20px);
+					color: $color-blue;
+				}
+			}
+		}
+	}
+}

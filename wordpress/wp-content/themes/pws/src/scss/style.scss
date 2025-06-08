@@ -1,0 +1,48 @@
+@charset 'UTF-8';
+/* -----------------------------------------------------------------------------
+
+Bombarda - Website Template
+
+File:           Base SCSS File
+Author:         Suelo
+
+-------------------------------------------------------------------------------- */
+
+// Import Libs
+@import 'include-media/dist/_include-media.scss';
+@import 'sass-easing/_easings.scss';
+@import 'normalize-scss/sass/normalize/_import-now.scss';
+@import 'locomotive-scroll/src/locomotive-scroll.scss';
+@import 'slick-carousel/slick/slick.scss';
+//@import 'mmenu-js/src/mmenu.scss';
+@import '../../node_modules/mmenu-js/dist/mmenu.css';
+
+
+// Import Config
+@import 'variables';
+@import 'mixins';
+
+// Import Icons
+@import '../../assets/fonts/icons';
+@import '../../assets/fonts/fonts';
+
+// Import Styles
+@import 'animations';
+@import 'setup';
+@import 'basics';
+@import 'grid';
+@import 'header';
+@import 'sections';
+@import 'footer';
+@import 'elements';
+@import 'helpers';
+
+// Import pages
+@import 'pages';
+
+@include media('<=768px'){ 
+	h2 {
+		font-size: 1.5em !important;
+		line-height: 1.2em !important;
+	}	
+}

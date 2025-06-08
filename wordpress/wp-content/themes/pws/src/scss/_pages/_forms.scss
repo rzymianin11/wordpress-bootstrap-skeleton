@@ -1,0 +1,34 @@
+.policyform {
+	display: block;
+	font-size: rem(8px);
+	color: black;
+	line-height: rem(10px);
+}
+
+.form-group {
+	width: 100%;
+	margin-bottom: rem(15px);
+	.form-control {
+		border: none;
+		color: black;
+		font-weight: 400;
+		padding: 8px 24px;
+		border-radius: 3px;
+		background-color: #EEEEEE;
+		width: 100%;
+		@include placeholder {
+			color: black;
+			font-weight: 400;
+		}
+	}
+	.btn {
+		float: right;
+	}
+}
+
+.sidebarform {
+	h2 {
+		margin-top: 0;
+		font-weight: 400;
+	}
+}

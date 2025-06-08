@@ -1,0 +1,152 @@
+// SASS Configuration File
+$base: 18px;
+$base-mobile: 16px;
+
+// Fonts
+// -----------------------------------------
+
+$font-path: '~@/../assets/fonts/';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,400&display=swap');
+
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
+$font-tertiary: 'Montserrat', sans-serif;
+$font-quantenary: 'Montserrat', sans-serif;
+$font-quinary: 'Montserrat', sans-serif;
+$font-senary: 'Montserrat', sans-serif;
+
+$font-primary-regular: normal;
+$font-primary-bold: bold;
+
+$font-secondary-regular: normal;
+$font-secondary-bold: bold;
+
+$font-tertiary-regular: normal;
+$font-tertiary-bold: bold;
+
+$font-quantenary-regular: normal;
+$font-quantenary-bold: bold;
+
+$font-quinary-regular: normal;
+
+// Colors
+// -----------------------------------------
+
+$color-body: black;
+
+$color-primary: #000000;
+$color-secondary: #000000;
+$color-tertiary: #000000;
+
+$color-light: #dbcbb6;
+$color-medium: #313131;
+$color-dark: black;
+
+$color-global: #000000;
+$color-muted: rgba(black, 0.55);
+$color-muted-2: #b2b2b2;
+$color-muted-inverted: rgba(255, 255, 255, 0.4);
+
+$color-red: #e15757;
+$color-blue: #009EE2;
+$color-orange: #ec9744;
+$color-red: #c6252f;
+$color-green: #54ae61;
+
+$color-line: #eee;
+$color-line-inverted: rgba(255, 255, 255, 0.15);
+
+// Colors - Social
+$color-facebook: #213553;
+$color-twitter: #3aa8db;
+$color-google: #d04f3e;
+$color-behance: #1882ff;
+$color-dribbble: #e95aae;
+$color-flickr: #f9429c;
+$color-instagram: #4f86ac;
+$color-linkedin: #008bc2;
+$color-pinterest: #cb1f24;
+$color-skype: #00bef4;
+$color-slack: #44ba97;
+$color-tumblr: #435971;
+$color-vimeo: #0bc4ef;
+$color-vine: #00be9b;
+$color-youtube: #ed4533;
+
+// Header
+$header-height-desktop: 150px;
+$header-height-mobile: 95px;
+
+// Spacing
+$layout-spacing-desktop: 130px;
+$layout-spacing-mobile: 60px;
+$layout-spacing-desktop-lg: $layout-spacing-desktop * 1.5;
+$layout-spacing-mobile-lg: $layout-spacing-mobile * 1.5;
+$layout-spacing-desktop-sm: $layout-spacing-desktop * 0.65;
+$layout-spacing-mobile-sm: $layout-spacing-mobile * 0.65;
+
+$shadow: 4px 4px 10px 1px rgba(black, 0.05);
+$shadow-primary: 0 0 20px 0 rgba($color-primary, 0.35);
+$shadow-sm: 0 2px 15px 0 rgba($color-dark, 0.2);
+
+$radius-sm: 0.3rem;
+$radius: 4px;
+$radius-lg: 1rem;
+
+// Grid Settings
+$grid-columns: 12;
+$gutter-width-desktop: 40px;
+$gutter-width-mobile: 20px;
+$outer-margin: 20px;
+$breakpoints-extended: xs 575px auto, sm 767px 720px, md 991px 950px, lg 1199px 1170px, lg 1439px 1360px;
+
+$gutter-compensation-desktop: $gutter-width-desktop * 0.5 * -1;
+$half-gutter-width-desktop: $gutter-width-desktop * 0.5;
+
+$gutter-compensation-mobile: $gutter-width-mobile * 0.5 * -1;
+$half-gutter-width-mobile: $gutter-width-mobile * 0.5;
+
+// Media Queries
+$breakpoints: (
+  xs: 575px,
+  sm: 767px,
+  md: 991px,
+  lg: 1199px,
+  xl: 1439px
+);
+
+// Types
+// -----------------------------------------
+
+// Basic
+$types: (
+  primary: $color-primary,
+  tertiary: $color-tertiary,
+  secondary: $color-secondary,
+  blue: $color-blue,
+  orange: $color-orange,
+  red: $color-red,
+  green: $color-green,
+  dark: $color-dark,
+  light: $color-light
+);
+
+// Social
+$types-social: (
+  facebook: $color-facebook,
+  twitter: $color-twitter,
+  google: $color-google,
+  behance: $color-behance,
+  dribbble: $color-dribbble,
+  flickr: $color-flickr,
+  instagram: $color-instagram,
+  linkedin: $color-linkedin,
+  pinterest: $color-pinterest,
+  skype: $color-skype,
+  slack: $color-slack,
+  tumblr: $color-tumblr,
+  vimeo: $color-vimeo,
+  vine: $color-vine,
+  youtube: $color-youtube
+);

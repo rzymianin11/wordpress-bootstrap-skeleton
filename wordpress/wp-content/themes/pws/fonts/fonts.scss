@@ -1,0 +1,10 @@
+@charset 'utf-8';
+
+@import "../css/bourbon/_bourbon.scss";
+
+@include font-face(Montserrat, './montserrat/montserrat-ultralight-webfont', 200);
+@include font-face(Montserrat, './montserrat/montserrat-light-webfont', 300);
+@include font-face(Montserrat, './montserrat/montserrat-regular-webfont', 400);
+@include font-face(Montserrat, './montserrat/montserrat-semibold-webfont', 600);
+@include font-face(Montserrat, './montserrat/montserrat-bold-webfont', 700);
+@include font-face(Montserrat, './montserrat/montserrat-extrabold-webfont', 900);

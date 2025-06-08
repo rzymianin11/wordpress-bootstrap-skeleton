@@ -1,0 +1,38 @@
+{#
+  Title: Featured Projects
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: projects featured
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section featured-projects" id="{{ block.id }}">
+	<div class="container">
+		<div class="row row-wrapper">
+		{% set delay = 0 %}
+			{% for project in fields.wyroznione_projekty %}
+				{% set item = Post(project) %}
+				<div class="col-md-2 project-col" data-animation="fade-in-up"  data-animation-delay="{{ delay }}">
+					<div class="wrapper">
+						<a href="#" alt="{{ project.post_title }}" />
+							<div class="project_short_content">
+								<img src="{{item.thumbnail.src('project_homepage')}}" />
+								<div class="hidden_toggle">
+									<h4>{{ project.post_title }}</h4>
+									<p>{{ project.post_content }}</p>
+								</div>
+							</div>
+							<h3>{{ project.post_title }}</h3>
+						</a>
+					</div>
+				</div>
+				{% set delay = delay + 200 %}
+			{% endfor %}
+	    </div>
+	</div>
+</section>

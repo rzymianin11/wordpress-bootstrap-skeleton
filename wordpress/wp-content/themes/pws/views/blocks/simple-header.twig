@@ -1,0 +1,23 @@
+{#
+  Title: Simple header
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: header
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section simple-header" id="{{ block.id }}">
+	<div class="container">
+		<div class="row row-wrapper" style="background-image: url('{{ fields.image.sizes.maxviewport }}')" data-animation="fade-in-down" data-animation-delay="400">
+			<div class="col-12">
+				<h1 data-animation="fade-in-down" data-animation-delay="600">{{ fields.tytul }}</h1>
+				<h2 data-animation="fade-in-down" data-animation-delay="800">{{ fields.undertitle }}</h2>
+			</div>
+	    </div>
+	</div>
+</section>

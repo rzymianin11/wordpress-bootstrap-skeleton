@@ -1,0 +1,43 @@
+{#
+  Title: Slider
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: slider
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section slider" id="{{ block.id }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+			    {% for slide in fields.slider %}
+				    <div class="wrapper">
+				    	<div class="absolute">
+					    	<div class="slider-slick" data-animation="fade-in">
+								{% for obrazek in slide.obrazki %}
+							    	<div class="slide">
+										<div class="slide-bg" style="background-image: url('{{ obrazek.url }}');"></div>
+										
+									</div>
+								{% endfor %}
+						    </div>
+				    	</div>
+				    	<div class="captions">
+							<h1 data-animation="fade-in-up" data-animation-delay="0">{{ slide.tytul_glowny }}</h1>
+							<h2 data-animation="fade-in-up" data-animation-delay="200">{{ slide.tytul_maly }}</h2>
+							<div class="buttons" data-animation="fade-in-up" data-animation-delay="400">
+								<a href="{{ slide.przycisk.url }}" class="btn btn-primary">Nasze usługi</a>
+								Skontaktuj się z nami!
+							</div>
+				    	</div>
+				    </div>
+			    {% endfor %}	
+			</div>
+	    </div>
+	</div>
+</section>

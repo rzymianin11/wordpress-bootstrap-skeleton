@@ -1,3 +1,5 @@
+@use 'include-media/dist/_include-media.scss' as *;
+@use 'mixins.scss' as *;
 /* ---------------------------------------------------------------------------- */
 /* --- HEADER
 /* ----------------------------------------------------------------------------- */
@@ -5,4 +7,16 @@
 #page-header {
 	background-color: black;
 	color: white;
+	height: rem(200px);
+	& > .container {
+		height: 100%;
+		& > .row {
+			height: 100%;
+			.logo {
+				img {
+					max-height: rem(65px);
+				}
+			}
+		}
+	}
 }

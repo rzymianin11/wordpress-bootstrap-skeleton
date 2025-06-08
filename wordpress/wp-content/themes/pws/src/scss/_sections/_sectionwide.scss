@@ -1,0 +1,67 @@
+@use '~include-media/dist/_include-media.scss' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.section {
+	&-widebanner {
+		width: 100%;
+		& > .row {
+			height: 700px;
+			position: relative;
+			color: white;
+			.bg {
+				position: absolute;
+				left: 20px;
+				right: 20px;
+				top: 0;
+				bottom: 0;
+				background-size: cover;
+				background-position: center center;
+				z-index: -1;
+			}
+			& > .col {
+				padding-left: 60px;
+				padding-bottom: 50px;
+			}
+		}
+		h2 {
+			color: white;
+			font-size: rem(50px);
+			line-height: rem(50px);
+			font-weight: 700;
+			font-style: italic;		
+			margin-bottom: 0;	
+		}
+		h3 {
+			margin: 0;
+			color: white;
+			font-size: rem(120px);
+			font-weight: 700;
+			font-style: italic;
+			margin-right: 30px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		a {
+			display: inline-block;
+			vertical-align: middle;
+			font-weight: 700;
+			background-color: white;
+			border: 1px solid #ccc;
+			color: #777;
+			padding: .8em 2em;
+			text-transform: uppercase;
+			font-family: "Poppins", sans-serif;
+			&:hover {
+				color: white;
+				border-color: #A41A2D;
+				background-color: #A41A2D;
+			}
+		}
+	}
+}
+
+h2 {
+	position: relative;
+	z-index: 2;
+}

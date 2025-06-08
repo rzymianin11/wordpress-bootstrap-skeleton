@@ -2,8 +2,8 @@
 
 @font-face {
   font-family:"Icons";
-  src:url("../../assets/fonts/icons-95f13546d37d3f5173aaa8ff19dd2355.woff2?95f13546d37d3f5173aaa8ff19dd2355") format("woff2"),
-		url("../../assets/fonts/icons-95f13546d37d3f5173aaa8ff19dd2355.woff?95f13546d37d3f5173aaa8ff19dd2355") format("woff");
+  src:url("../../assets/fonts/icons-b87b6f79145776a8008a6368d577d972.woff2?b87b6f79145776a8008a6368d577d972") format("woff2"),
+		url("../../assets/fonts/icons-b87b6f79145776a8008a6368d577d972.woff?b87b6f79145776a8008a6368d577d972") format("woff");
   font-weight:normal;
   font-style:normal;
 }
@@ -12,11 +12,34 @@
 $icons: (
 
   dribble: "f101",
-  fb: "f102",
-  inst: "f103",
-  li: "f104",
-  linked: "f105",
-  logo: "f106",
+  facebook-f: "f102",
+  facebook-square: "f103",
+  fb: "f104",
+  flickr: "f105",
+  google-plus-g: "f106",
+  google-plus-square: "f107",
+  google: "f108",
+  inst: "f109",
+  instagram: "f10a",
+  li: "f10b",
+  linked: "f10c",
+  linkedin-in: "f10d",
+  linkedin: "f10e",
+  logo: "f10f",
+  pinterest: "f110",
+  reddit: "f111",
+  skype: "f112",
+  telegram-plane: "f113",
+  tumblr: "f114",
+  twitter-square: "f115",
+  twitter: "f116",
+  vimeo-v: "f117",
+  vk: "f118",
+  whatsapp: "f119",
+  xing: "f11a",
+  yelp: "f11b",
+  youtube-square: "f11c",
+  youtube: "f11d",
 );
 
 @mixin icon($icon) {
@@ -44,12 +67,40 @@ $icons: (
   @include icon(dribble);
 }
 
+.i-facebook-f:before {
+  @include icon(facebook-f);
+}
+
+.i-facebook-square:before {
+  @include icon(facebook-square);
+}
+
 .i-fb:before {
   @include icon(fb);
 }
 
+.i-flickr:before {
+  @include icon(flickr);
+}
+
+.i-google-plus-g:before {
+  @include icon(google-plus-g);
+}
+
+.i-google-plus-square:before {
+  @include icon(google-plus-square);
+}
+
+.i-google:before {
+  @include icon(google);
+}
+
 .i-inst:before {
   @include icon(inst);
+}
+
+.i-instagram:before {
+  @include icon(instagram);
 }
 
 .i-li:before {
@@ -60,6 +111,70 @@ $icons: (
   @include icon(linked);
 }
 
+.i-linkedin-in:before {
+  @include icon(linkedin-in);
+}
+
+.i-linkedin:before {
+  @include icon(linkedin);
+}
+
 .i-logo:before {
   @include icon(logo);
+}
+
+.i-pinterest:before {
+  @include icon(pinterest);
+}
+
+.i-reddit:before {
+  @include icon(reddit);
+}
+
+.i-skype:before {
+  @include icon(skype);
+}
+
+.i-telegram-plane:before {
+  @include icon(telegram-plane);
+}
+
+.i-tumblr:before {
+  @include icon(tumblr);
+}
+
+.i-twitter-square:before {
+  @include icon(twitter-square);
+}
+
+.i-twitter:before {
+  @include icon(twitter);
+}
+
+.i-vimeo-v:before {
+  @include icon(vimeo-v);
+}
+
+.i-vk:before {
+  @include icon(vk);
+}
+
+.i-whatsapp:before {
+  @include icon(whatsapp);
+}
+
+.i-xing:before {
+  @include icon(xing);
+}
+
+.i-yelp:before {
+  @include icon(yelp);
+}
+
+.i-youtube-square:before {
+  @include icon(youtube-square);
+}
+
+.i-youtube:before {
+  @include icon(youtube);
 }

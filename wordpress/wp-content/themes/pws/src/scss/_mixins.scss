@@ -1,5 +1,6 @@
 @use 'variables' as *;
 @use 'sass-easing/_easings.scss' as *;
+@use "sass:math";
 
 @mixin placeholder {
   ::-webkit-input-placeholder {@content}
@@ -190,8 +191,8 @@
 }
 
 @function stripUnit($value) {
-    @return $value / ($value * 0 + 1);
+    @return math.div($value, $value * 0 + 1);
 }
 @function rem($pxValue) {
-    @return #{stripUnit($pxValue) / stripUnit($base)}rem;
+    @return #{math.div(stripUnit($pxValue), stripUnit($base))}rem;
 }

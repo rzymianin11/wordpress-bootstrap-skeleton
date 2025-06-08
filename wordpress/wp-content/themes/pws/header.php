@@ -23,7 +23,7 @@
     	<div class="page-wrapper"> 
 <header id="page-header">
 	<div class="container">
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-auto">
 				<div class="logo">
 					<a href="/"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logo.png" alt="logo"></a>

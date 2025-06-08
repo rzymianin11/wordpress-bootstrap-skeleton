@@ -1,6 +1,6 @@
 {#
   Title: Slider
-  Category: agis_blocks
+  Category: pws_blocks
   Icon: images-alt
   Keywords: slider
   Mode: edit
@@ -12,8 +12,8 @@
 #}
 
 <section class="section slider" id="{{ block.id }}">
-	<div class="container">
-		<div class="row">
+	<div class="container-fluid">
+		<div class="row no-gutters">
 			<div class="col-12">
 			    {% for slide in fields.slider %}
 				    <div class="wrapper">
@@ -27,14 +27,14 @@
 								{% endfor %}
 						    </div>
 				    	</div>
-				    	<div class="captions">
+				    	{# <div class="captions">
 							<h1 data-animation="fade-in-up" data-animation-delay="0">{{ slide.tytul_glowny }}</h1>
 							<h2 data-animation="fade-in-up" data-animation-delay="200">{{ slide.tytul_maly }}</h2>
 							<div class="buttons" data-animation="fade-in-up" data-animation-delay="400">
 								<a href="{{ slide.przycisk.url }}" class="btn btn-primary">Nasze usługi</a>
 								Skontaktuj się z nami!
 							</div>
-				    	</div>
+				    	</div> #}
 				    </div>
 			    {% endfor %}	
 			</div>

@@ -1,0 +1,27 @@
+{#
+  Title: Two columns
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: list lists
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section two-columns" id="{{ block.id }}">
+	<div class="container">
+		<div class="row row-wrapper">
+			<div class="col-md-6 col-content" data-animation="fade-in-left">
+				<h2 class="d-flex align-items-center"><img class="mr-2" src="{{ theme.link }}/assets/img/pws-black.png" alt="pws-black" /> {{ fields.title }}</h2>
+				{{ fields.description }}
+				<a class="btn" href="{{fields.button.url}}">{{fields.button.title}}</a>
+			</div>
+			<div class="col-md-6 pos-relative">
+				<div class="bg" style="background-image: url('{{ fields.image.sizes.maxviewport }}')" data-animation="fade-in-right" data-animation-delay="200"></div>
+			</div>
+	    </div>
+	</div>
+</section>

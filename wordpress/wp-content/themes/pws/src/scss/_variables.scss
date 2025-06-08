@@ -8,14 +8,16 @@ $base-mobile: 16px;
 
 $font-path: '~@/../assets/fonts/';
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-$font-primary: 'Montserrat', sans-serif;
-$font-secondary: 'Montserrat', sans-serif;
-$font-tertiary: 'Montserrat', sans-serif;
-$font-quantenary: 'Montserrat', sans-serif;
-$font-quinary: 'Montserrat', sans-serif;
-$font-senary: 'Montserrat', sans-serif;
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "Roboto", sans-serif;
+$font-tertiary: "Roboto", sans-serif;
+$font-quantenary: "Roboto", sans-serif;
+$font-quinary: "Roboto", sans-serif;
+$font-senary: "Roboto", sans-serif;
 
 $font-primary-regular: normal;
 $font-primary-bold: bold;

@@ -24,6 +24,12 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page('Ustawienia strony');
 }
 
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+add_filter('timber/twig', function ($twig) {
+    $twig->addFilter(new \Twig\TwigFilter('shortcode', 'do_shortcode'));
+    return $twig;
+});
 
 add_action( 'after_setup_theme', 'wpse_setup_theme' );
  function wpse_setup_theme() {

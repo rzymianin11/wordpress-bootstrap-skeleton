@@ -24,7 +24,7 @@ const webpackConfig = merge(baseWebpackConfig, {
          port: 41683
        },
       proxy: {
-        target: 'http://agis.mdg.usermd.net'
+        target: 'http://localhost'
       }
 //      server: { baseDir: ['./'] }
     }),

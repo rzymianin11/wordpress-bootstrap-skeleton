@@ -3,5 +3,31 @@
 /* ----------------------------------------------------------------------------- */
 
 #footer {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    .red-logo {
+        height: 100px;
+        width: auto;
+    }
+    .social {
+        display: flex;
+        gap: 15px;
+        i {
+            font-size: 35px;
+        }
+    }
+    i {
+        font-style: normal;
+    }
+}
 
+.copyright {
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 10px 8px 10px 0;
+    font-weight: rem(14px);
 }

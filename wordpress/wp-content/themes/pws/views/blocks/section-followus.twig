@@ -1,0 +1,31 @@
+{#
+  Title: Follow us
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: list lists
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section section-followus2">
+	<div class="row align-items-center justify-content-start py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-auto d-flex flex-row align-items-center justify-content-center gap">
+          <img src="{{ theme.link }}/assets/img/pws-black.png" alt="pws-black" />
+          <h2>{{ fields.title }}</h2>
+          <div class="d-flex align-items-center gap">
+            <a target="_blank" class="social" href="{{ fields.facebook_url }}"><i class="i-facebook-f"></i></a>
+            <a target="_blank" class="social" href="{{ fields.twittter_url }}"><i class="i-twitter"></i></a>
+            <a target="_blank" class="social" href="{{ fields.instagram_url }}"><i class="i-instagram"></i></a>
+            <a target="_blank" class="social" href="{{ fields.youtube_url }}"><i class="i-youtube"></i></a>
+          </div>
+        </div>
+     </div>
+    </div>
+	</div>
+</section>

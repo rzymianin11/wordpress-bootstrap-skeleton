@@ -37,6 +37,14 @@ Author:         Suelo
 @forward 'elements';
 @forward 'helpers';
 
+// Import sections
+
+@forward '_sections/sectionslider';
+@forward '_sections/sectionwide';
+@forward '_sections/sectionfollowus';
+@forward '_sections/two-columns';
+@forward '_sections/contactform';
+
 // Import pages
 //@forward 'pages';
 
@@ -45,4 +53,8 @@ Author:         Suelo
 		font-size: 1.5em !important;
 		line-height: 1.2em !important;
 	}	
+}
+
+.justify-content-between {
+	justify-content: space-between;
 }

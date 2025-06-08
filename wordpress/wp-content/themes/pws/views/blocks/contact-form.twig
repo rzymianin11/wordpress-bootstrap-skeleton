@@ -1,0 +1,29 @@
+{#
+  Title: Contact form
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: list lists
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section section-contactform">
+  <div class="bg" style="background-image: url('{{ fields.background.sizes.maxviewport }}');" alt="bg contact form"></div>
+	<div class="row align-items-center justify-content-start py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-lg-offset-6 col-12 d-flex flex-row align-items-start justify-content-center flex-column gap">
+          <div class="form_header d-flex align-items-center">
+            <img src="{{ theme.link }}/assets/img/pws-black.png" class="mr-2" alt="pws-black" />
+            <h2>{{ fields.title }}</h2>
+          </div>
+          {{ fields.contact_form_short_code }}
+        </div>
+     </div>
+    </div>
+	</div>
+</section>

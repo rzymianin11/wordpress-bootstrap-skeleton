@@ -1,0 +1,27 @@
+{#
+  Title: Follow us Social
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: list lists
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section section-followus">
+	<div class="row align-items-center justify-content-start py-5">
+		<div class="bg" style="background-image: url('{{ fields.bg.sizes.maxviewport }}');"></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-auto boxblack d-flex flex-column align-items-center justify-content-center">
+          <h2>{{ fields.title }}</h2>
+          <a class="margin4 d-block" href="{{ fields.instagram.url }}">{{ fields.instagram.title }}</p>
+          <a class="btn btn-primary" href="{{ fields.przycisk.url }}">{{ fields.przycisk.title }}</a>
+        </div>
+     </div>
+    </div>
+	</div>
+</section>

@@ -1,0 +1,37 @@
+@use '~include-media/dist/_include-media.scss' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+section {
+    &.two-columns {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .col-content {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-right: 50px;
+        }
+        .btn {
+            color: #fff;
+            background-color: #222529;
+            border-color: #222529 #222529 #000; 
+            padding: .8em 2em;
+            font-weight: 700;
+            margin-top: 15px;
+            display: inline-block;
+            &:hover {
+                color: white;
+                background-color: #A41A2D;
+                border-color: #A41A2D;
+            }
+        }
+        .pos-relative {
+            position: relative;
+            .bg {
+                position: absolute;
+                inset: 0;
+                background-position: center center;
+            }
+        }
+    }
+}

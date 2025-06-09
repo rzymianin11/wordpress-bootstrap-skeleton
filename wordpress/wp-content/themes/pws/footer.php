@@ -23,7 +23,7 @@
 				        ?>
 					</div> -->
 			</div>
-			<div class="row copyright pt-5 ">
+			<div class="row copyright p-5 ">
 				<div class="col">Copyright © 2007 - 2025 Primary Weapon Systems
 </div>
 			</div>

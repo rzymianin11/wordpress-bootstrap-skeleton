@@ -9,8 +9,19 @@
 			padding: 0;
 			& > .row {
 				margin: 0;
-				height: 600px;
+				.wrapper {
+					height: 600px !important;
+				}
 				padding: 0;
+				@include media('<=768px'){
+					.wrapper {
+						height: 300px !important;
+					}
+					.wrapper {
+						padding-left: 30px;
+						padding-right: 30px;	
+					}	
+				}
 				.wrapper {
 					height: 100%;
 					position: relative;

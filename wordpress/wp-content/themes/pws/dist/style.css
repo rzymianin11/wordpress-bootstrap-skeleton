@@ -5857,6 +5857,15 @@ img {
   display: flex;
   align-items: center;
 }
+@media (max-width: 554px) {
+  #footer .row {
+    justify-content: center !important;
+  }
+  #footer .row .social {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
 #footer .red-logo {
   height: 100px;
   width: auto;
@@ -5880,6 +5889,7 @@ img {
   font-size: 14px;
   line-height: 21px;
   padding: 10px 8px 10px 0;
+  font-weight: 700;
 }
 
 /* ---------------------------------------------------------------------------- */
@@ -7837,8 +7847,19 @@ img {
 }
 .section.slider > .container-fluid > .row {
   margin: 0;
-  height: 600px;
   padding: 0;
+}
+.section.slider > .container-fluid > .row .wrapper {
+  height: 600px !important;
+}
+@media (max-width: 768px) {
+  .section.slider > .container-fluid > .row .wrapper {
+    height: 300px !important;
+  }
+  .section.slider > .container-fluid > .row .wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 .section.slider > .container-fluid > .row .wrapper {
   height: 100%;
@@ -7948,6 +7969,16 @@ img {
 .section-widebanner {
   width: 100%;
 }
+@media (max-width: 768px) {
+  .section-widebanner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-widebanner .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .section-widebanner > .row {
   height: 700px;
   position: relative;
@@ -7962,6 +7993,12 @@ img {
   background-size: cover;
   background-position: center center;
   z-index: -1;
+}
+@media (max-width: 768px) {
+  .section-widebanner > .row .bg {
+    left: 0;
+    right: 0;
+  }
 }
 .section-widebanner > .row > .col {
   padding-left: 60px;
@@ -7987,6 +8024,11 @@ img {
   margin-right: 30px;
   display: inline-block;
   vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .section-widebanner h3 {
+    font-size: 3.3333333333rem;
+  }
 }
 .section-widebanner a {
   display: inline-block;
@@ -8130,6 +8172,11 @@ section.two-columns .btn:hover {
 }
 section.two-columns .pos-relative {
   position: relative;
+}
+@media (max-width: 768px) {
+  section.two-columns .pos-relative {
+    height: 400px;
+  }
 }
 section.two-columns .pos-relative .bg {
   position: absolute;

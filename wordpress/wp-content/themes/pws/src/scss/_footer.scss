@@ -1,3 +1,5 @@
+@use '~include-media/dist/_include-media.scss' as *;
+
 /* ---------------------------------------------------------------------------- */
 /* --- FOOTER
 /* ----------------------------------------------------------------------------- */
@@ -6,6 +8,15 @@
     height: 300px;
     display: flex;
     align-items: center;
+    @include media('<=554px'){
+        .row {
+            justify-content: center !important;
+            .social {
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
+    }
     .red-logo {
         height: 100px;
         width: auto;
@@ -29,5 +40,5 @@
     font-size: 14px;
     line-height: 21px;
     padding: 10px 8px 10px 0;
-    font-weight: rem(14px);
+    font-weight: 700;
 }

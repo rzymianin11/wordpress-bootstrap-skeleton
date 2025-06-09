@@ -5,6 +5,14 @@
 .section {
 	&-widebanner {
 		width: 100%;
+			@include media('<=768px'){
+				padding-left: 0;
+				padding-right: 0;
+				.container {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
 		& > .row {
 			height: 700px;
 			position: relative;
@@ -18,11 +26,18 @@
 				background-size: cover;
 				background-position: center center;
 				z-index: -1;
+				@include media('<=768px'){
+					left: 0;
+					right: 0;
+				}
 			}
 			& > .col {
 				padding-left: 60px;
 				padding-bottom: 50px;
 			}
+		}
+		.widecontent {
+
 		}
 		h2 {
 			color: white;
@@ -41,6 +56,9 @@
 			margin-right: 30px;
 			display: inline-block;
 			vertical-align: middle;
+			@include media('<=768px'){
+				font-size: rem(60px);
+			}
 		}
 		a {
 			display: inline-block;

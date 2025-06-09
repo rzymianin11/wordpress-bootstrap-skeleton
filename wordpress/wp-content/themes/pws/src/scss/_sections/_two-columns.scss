@@ -27,6 +27,9 @@ section {
         }
         .pos-relative {
             position: relative;
+            @include media('<=768px'){
+                height: 400px;
+            }
             .bg {
                 position: absolute;
                 inset: 0;

@@ -2,8 +2,8 @@
 
 @font-face {
   font-family:"Icons";
-  src:url("../../assets/fonts/icons-b87b6f79145776a8008a6368d577d972.woff2?b87b6f79145776a8008a6368d577d972") format("woff2"),
-		url("../../assets/fonts/icons-b87b6f79145776a8008a6368d577d972.woff?b87b6f79145776a8008a6368d577d972") format("woff");
+  src:url("../../assets/fonts/icons-e467d85b9f3eb5704d00bd55eb8a2b52.woff2?e467d85b9f3eb5704d00bd55eb8a2b52") format("woff2"),
+		url("../../assets/fonts/icons-e467d85b9f3eb5704d00bd55eb8a2b52.woff?e467d85b9f3eb5704d00bd55eb8a2b52") format("woff");
   font-weight:normal;
   font-style:normal;
 }
@@ -28,18 +28,19 @@ $icons: (
   logo: "f10f",
   pinterest: "f110",
   reddit: "f111",
-  skype: "f112",
-  telegram-plane: "f113",
-  tumblr: "f114",
-  twitter-square: "f115",
-  twitter: "f116",
-  vimeo-v: "f117",
-  vk: "f118",
-  whatsapp: "f119",
-  xing: "f11a",
-  yelp: "f11b",
-  youtube-square: "f11c",
-  youtube: "f11d",
+  search: "f112",
+  skype: "f113",
+  telegram-plane: "f114",
+  tumblr: "f115",
+  twitter-square: "f116",
+  twitter: "f117",
+  vimeo-v: "f118",
+  vk: "f119",
+  whatsapp: "f11a",
+  xing: "f11b",
+  yelp: "f11c",
+  youtube-square: "f11d",
+  youtube: "f11e",
 );
 
 @mixin icon($icon) {
@@ -129,6 +130,10 @@ $icons: (
 
 .i-reddit:before {
   @include icon(reddit);
+}
+
+.i-search:before {
+  @include icon(search);
 }
 
 .i-skype:before {

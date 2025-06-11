@@ -29,6 +29,22 @@
 					<a href="/"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logo.png" alt="logo"></a>
 				</div>
 			</div>
+			<div class="col-auto ml-auto right-header">
+				<div class="search">
+					<?php
+						get_search_form(array(
+							'placeholder' => 'Search for...'
+						));
+					?>
+				</div>
+				<?php
+					wp_nav_menu(
+						array('menu' => 'main-menu',
+							'container' => '' 
+						)
+					);
+				?>
+			</div>			
 		</div>
 	</div>
 </header>

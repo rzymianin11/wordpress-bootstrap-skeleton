@@ -17,30 +17,30 @@ function create_structure() {
     );
 */
     
-    register_post_type('project', array(
-        'labels' => array(
-            'name' => __('Nasze projekty'),
-            'singular_name' => __('Projekt')
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'prevent_duplicates' => true
-            )
-    );
+    // register_post_type('project', array(
+    //     'labels' => array(
+    //         'name' => __('Nasze projekty'),
+    //         'singular_name' => __('Projekt')
+    //     ),
+    //     'public' => true,
+    //     'has_archive' => true,
+    //     'supports' => array('title', 'editor', 'thumbnail'),
+    //     'prevent_duplicates' => true
+    //         )
+    // );
     
-    register_post_type('oferty-pracy', array(
-        'labels' => array(
-            'name' => __('Oferty pracy'),
-            'singular_name' => __('Oferta pracy')
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'show_in_rest' => true,
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'prevent_duplicates' => true
-            )
-    );
+    // register_post_type('oferty-pracy', array(
+    //     'labels' => array(
+    //         'name' => __('Oferty pracy'),
+    //         'singular_name' => __('Oferta pracy')
+    //     ),
+    //     'public' => true,
+    //     'has_archive' => true,
+    //     'show_in_rest' => true,
+    //     'supports' => array('title', 'editor', 'thumbnail'),
+    //     'prevent_duplicates' => true
+    //         )
+    // );
     
 /*
     register_post_type('person', array(

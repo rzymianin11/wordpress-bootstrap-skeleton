@@ -1,5 +1,6 @@
 @use 'include-media/dist/_include-media.scss' as *;
 @use 'mixins.scss' as *;
+@use '../../assets/fonts/icons' as *;
 /* ---------------------------------------------------------------------------- */
 /* --- HEADER
 /* ----------------------------------------------------------------------------- */
@@ -15,6 +16,88 @@
 			.logo {
 				img {
 					max-height: rem(65px);
+				}
+			}
+			#menu-main-menu {
+				display: flex;
+				flex-direction: row;
+				gap: 15px;
+				align-items: center;
+				list-style-type: none;
+				li {
+					&.current-menu-item {
+						a {
+							color: #A41A2D;
+							text-decoration: underline;
+						}
+					}
+					a {
+						color: white;
+						text-transform: uppercase;
+						font-family: Roboto;
+						font-weight: 600;
+						font-size: rem(14px);
+						line-height: rem(12px);
+						letter-spacing: -0.3px;
+						&:hover {
+							color: #A41A2D;
+						}
+					}
+				}
+			}
+			.right-header {
+				display: flex;
+				align-items: flex-end;
+				flex-direction: column;
+				.searchform {
+					width: 377px;
+					position: relative;
+					max-width: 100%;
+					margin-bottom: 20px;
+					input[type="text"] {
+						border: 1px solid #BBBBBB;
+						border-radius: 40px;
+						height: 40px;
+						align-items: center;
+						width: 100%;
+						justify-content: flex-start;
+						padding-left: 20px;
+						font-size: rem(16px);
+						font-weight: 400;
+						font-family: Roboto;
+						color: white;
+						background-color: black;
+						@include placeholder {
+							color: #757575;
+							font-size: rem(16px);
+							font-weight: 400;
+							font-family: Roboto;
+						}
+					}
+					button[type="submit"] {
+						position: absolute;
+						z-index: 9;
+						right: 15px;
+						top: 50%;
+						transform: translateY(-50%);
+						background-color: black;
+						border: none;
+						cursor: pointer;
+						cursor: hand;
+						transition: 0.3s all;
+						&:hover {
+							right: 10px;
+							&:before {
+								color: #A41A2D;
+								font-size: 25px;
+							}
+						}
+						&:before {
+							color: white;
+							transition: 0.3s all;
+							@include icon(search);
+						}
+					}
 				}
 			}
 		}

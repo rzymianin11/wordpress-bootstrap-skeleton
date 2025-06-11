@@ -8,6 +8,12 @@
   font-style:normal;
 }
 
+@font-face {
+  font-family:"Porto";
+  src:url("../../assets/fonts/porto-icons.woff2") format("woff2");
+  font-weight:normal;
+  font-style:normal;
+}
 
 $icons: (
 
@@ -47,6 +53,19 @@ $icons: (
   font-family: "Icons";
   $code: map-get($icons, $icon);
   content: unquote('\'\\#{ $code }\'');
+}
+
+[class^="porto-icon-"] {
+    font-family: 'Porto' !important;
+    speak: never;
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .i {

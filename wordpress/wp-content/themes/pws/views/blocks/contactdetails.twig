@@ -1,0 +1,49 @@
+{#
+  Title: Contact details
+  Category: agis_blocks
+  Icon: images-alt
+  Keywords: list lists
+  Mode: edit
+  Align: full
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section section-contactdetails-wrapper">
+  <div class="container contact-details">
+    <div class="row align-items-center justify-content-en flex-row-reverse">
+    {% for column in fields.contact_details_column %}
+          <div class="col-md-4 contact-info">
+                  <div class="contacts-title">{{ column.column_title }}</div>
+                  <div class="row">
+                      <div class="col-md-12 mb-1">
+                          <i class="porto-icon-mobile"></i>
+                          <p><a href="tel:{{ column.phone_number }}">{{ column.phone_number }}</a></p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <i class="porto-icon-mail-alt"></i>
+                          <p><a href="mailto:{{ column.email }}">{{ column.email }}</a></p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <i class="porto-icon-clock"></i>
+                          <p>{{ column.open_times }}</p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <i class="porto-icon-location"></i>
+                          <p>{{ column.address }}</p>
+                      </div>
+                  </div>
+             </div>
+          {% endfor %}
+        </div>
+    </div>
+  </div>
+</section>

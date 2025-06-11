@@ -1,0 +1,43 @@
+@use '~include-media/dist/_include-media.scss' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.section-contactdetails-wrapper {
+    .contact-info {
+        .contacts-title {
+            margin-bottom: 20px;
+            color: #777;
+        }
+        i {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #A41A2D;
+            border-radius: 6px;
+            color: white;
+        }
+        p {
+            font-size: rem(14px);
+            a {
+                color: #A41A2D;
+            }
+        }
+        .col-md-12 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            i {
+                margin-right: 10px;
+            }
+            p {
+                padding: 0;
+                margin: 0;
+                color: #777;
+            }
+        }
+    }
+}
